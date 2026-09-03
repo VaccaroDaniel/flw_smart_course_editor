@@ -1,0 +1,335 @@
+{
+    "schemaVersion": 1,
+    "stageCourses": {
+        "FLW_CHW_A1": {
+            "WorldCode": "CHW",
+            "DeploymentStageCode": "A1",
+            "courseExternalKey": "FLW_CHW_A1",
+            "moodleCourseId": 201,
+            "moodleCourseIdnumber": "FLW_CHW_A1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-24T22:16:25+09:00",
+            "updatedAt": "2026-08-30T18:40:36+09:00"
+        },
+        "FLW_AEW_PRE_A1": {
+            "WorldCode": "AEW",
+            "DeploymentStageCode": "Pre-A1",
+            "courseExternalKey": "FLW_AEW_PRE_A1",
+            "moodleCourseId": 202,
+            "moodleCourseIdnumber": "FLW_AEW_PRE_A1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T14:24:29+09:00",
+            "updatedAt": "2026-08-30T18:39:33+09:00"
+        },
+        "FLW_AEW_A1": {
+            "WorldCode": "AEW",
+            "DeploymentStageCode": "A1",
+            "courseExternalKey": "FLW_AEW_A1",
+            "moodleCourseId": 203,
+            "moodleCourseIdnumber": "FLW_AEW_A1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T14:25:39+09:00",
+            "updatedAt": "2026-08-25T15:10:54+09:00"
+        },
+        "FLW_AEW_A2": {
+            "WorldCode": "AEW",
+            "DeploymentStageCode": "A2",
+            "courseExternalKey": "FLW_AEW_A2",
+            "moodleCourseId": 204,
+            "moodleCourseIdnumber": "FLW_AEW_A2",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T14:26:42+09:00",
+            "updatedAt": "2026-08-25T15:10:59+09:00"
+        },
+        "FLW_AEW_B1": {
+            "WorldCode": "AEW",
+            "DeploymentStageCode": "B1",
+            "courseExternalKey": "FLW_AEW_B1",
+            "moodleCourseId": 205,
+            "moodleCourseIdnumber": "FLW_AEW_B1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T14:27:36+09:00",
+            "updatedAt": "2026-08-25T15:11:08+09:00"
+        },
+        "FLW_REW_A1": {
+            "WorldCode": "REW",
+            "DeploymentStageCode": "A1",
+            "courseExternalKey": "FLW_REW_A1",
+            "moodleCourseId": 206,
+            "moodleCourseIdnumber": "FLW_REW_A1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T14:28:44+09:00",
+            "updatedAt": "2026-08-30T18:40:12+09:00"
+        },
+        "FLW_REW_A2": {
+            "WorldCode": "REW",
+            "DeploymentStageCode": "A2",
+            "courseExternalKey": "FLW_REW_A2",
+            "moodleCourseId": 207,
+            "moodleCourseIdnumber": "FLW_REW_A2",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T14:29:26+09:00",
+            "updatedAt": "2026-08-27T15:38:29+09:00"
+        },
+        "FLW_REW_B1": {
+            "WorldCode": "REW",
+            "DeploymentStageCode": "B1",
+            "courseExternalKey": "FLW_REW_B1",
+            "moodleCourseId": 208,
+            "moodleCourseIdnumber": "FLW_REW_B1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T14:30:12+09:00",
+            "updatedAt": "2026-08-27T18:40:45+09:00"
+        },
+        "FLW_REW_B2": {
+            "WorldCode": "REW",
+            "DeploymentStageCode": "B2",
+            "courseExternalKey": "FLW_REW_B2",
+            "moodleCourseId": 209,
+            "moodleCourseIdnumber": "FLW_REW_B2",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T14:31:12+09:00",
+            "updatedAt": "2026-08-27T18:42:23+09:00"
+        },
+        "FLW_REW_C1": {
+            "WorldCode": "REW",
+            "DeploymentStageCode": "C1",
+            "courseExternalKey": "FLW_REW_C1",
+            "moodleCourseId": 210,
+            "moodleCourseIdnumber": "FLW_REW_C1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T14:32:18+09:00",
+            "updatedAt": "2026-08-27T17:46:16+09:00"
+        },
+        "FLW_RUW_A1": {
+            "WorldCode": "RUW",
+            "DeploymentStageCode": "A1",
+            "courseExternalKey": "FLW_RUW_A1",
+            "moodleCourseId": 211,
+            "moodleCourseIdnumber": "FLW_RUW_A1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T14:33:36+09:00",
+            "updatedAt": "2026-08-30T18:40:18+09:00"
+        },
+        "FLW_RUW_A2": {
+            "WorldCode": "RUW",
+            "DeploymentStageCode": "A2",
+            "courseExternalKey": "FLW_RUW_A2",
+            "moodleCourseId": 212,
+            "moodleCourseIdnumber": "FLW_RUW_A2",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T14:34:36+09:00",
+            "updatedAt": "2026-08-25T15:12:05+09:00"
+        },
+        "FLW_RUW_B1": {
+            "WorldCode": "RUW",
+            "DeploymentStageCode": "B1",
+            "courseExternalKey": "FLW_RUW_B1",
+            "moodleCourseId": 213,
+            "moodleCourseIdnumber": "FLW_RUW_B1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T14:35:40+09:00",
+            "updatedAt": "2026-08-25T15:12:13+09:00"
+        },
+        "FLW_RUW_B2": {
+            "WorldCode": "RUW",
+            "DeploymentStageCode": "B2",
+            "courseExternalKey": "FLW_RUW_B2",
+            "moodleCourseId": 214,
+            "moodleCourseIdnumber": "FLW_RUW_B2",
+            "status": "CREATE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:13:28+09:00",
+            "updatedAt": "2026-08-25T15:13:28+09:00"
+        },
+        "FLW_RUW_C1": {
+            "WorldCode": "RUW",
+            "DeploymentStageCode": "C1",
+            "courseExternalKey": "FLW_RUW_C1",
+            "moodleCourseId": 215,
+            "moodleCourseIdnumber": "FLW_RUW_C1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:13:54+09:00",
+            "updatedAt": "2026-08-30T18:40:29+09:00"
+        },
+        "FLW_CHW_A2": {
+            "WorldCode": "CHW",
+            "DeploymentStageCode": "A2",
+            "courseExternalKey": "FLW_CHW_A2",
+            "moodleCourseId": 216,
+            "moodleCourseIdnumber": "FLW_CHW_A2",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:16:18+09:00",
+            "updatedAt": "2026-08-27T19:14:05+09:00"
+        },
+        "FLW_CHW_B1": {
+            "WorldCode": "CHW",
+            "DeploymentStageCode": "B1",
+            "courseExternalKey": "FLW_CHW_B1",
+            "moodleCourseId": 217,
+            "moodleCourseIdnumber": "FLW_CHW_B1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:17:34+09:00",
+            "updatedAt": "2026-08-27T18:48:36+09:00"
+        },
+        "FLW_CHW_B2": {
+            "WorldCode": "CHW",
+            "DeploymentStageCode": "B2",
+            "courseExternalKey": "FLW_CHW_B2",
+            "moodleCourseId": 218,
+            "moodleCourseIdnumber": "FLW_CHW_B2",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:18:27+09:00",
+            "updatedAt": "2026-08-27T19:03:03+09:00"
+        },
+        "FLW_CHW_C1": {
+            "WorldCode": "CHW",
+            "DeploymentStageCode": "C1",
+            "courseExternalKey": "FLW_CHW_C1",
+            "moodleCourseId": 219,
+            "moodleCourseIdnumber": "FLW_CHW_C1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:19:07+09:00",
+            "updatedAt": "2026-08-27T19:15:10+09:00"
+        },
+        "FLW_GEW_A1": {
+            "WorldCode": "GEW",
+            "DeploymentStageCode": "A1",
+            "courseExternalKey": "FLW_GEW_A1",
+            "moodleCourseId": 220,
+            "moodleCourseIdnumber": "FLW_GEW_A1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:19:41+09:00",
+            "updatedAt": "2026-08-30T18:40:56+09:00"
+        },
+        "FLW_GEW_A2": {
+            "WorldCode": "GEW",
+            "DeploymentStageCode": "A2",
+            "courseExternalKey": "FLW_GEW_A2",
+            "moodleCourseId": 221,
+            "moodleCourseIdnumber": "FLW_GEW_A2",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:20:15+09:00",
+            "updatedAt": "2026-08-27T16:14:50+09:00"
+        },
+        "FLW_GEW_B1": {
+            "WorldCode": "GEW",
+            "DeploymentStageCode": "B1",
+            "courseExternalKey": "FLW_GEW_B1",
+            "moodleCourseId": 222,
+            "moodleCourseIdnumber": "FLW_GEW_B1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:20:39+09:00",
+            "updatedAt": "2026-08-27T19:16:51+09:00"
+        },
+        "FLW_GEW_B2": {
+            "WorldCode": "GEW",
+            "DeploymentStageCode": "B2",
+            "courseExternalKey": "FLW_GEW_B2",
+            "moodleCourseId": 223,
+            "moodleCourseIdnumber": "FLW_GEW_B2",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:21:05+09:00",
+            "updatedAt": "2026-08-27T19:23:32+09:00"
+        },
+        "FLW_GEW_C1": {
+            "WorldCode": "GEW",
+            "DeploymentStageCode": "C1",
+            "courseExternalKey": "FLW_GEW_C1",
+            "moodleCourseId": 224,
+            "moodleCourseIdnumber": "FLW_GEW_C1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:21:31+09:00",
+            "updatedAt": "2026-08-27T19:27:29+09:00"
+        },
+        "FLW_JPW_A1": {
+            "WorldCode": "JPW",
+            "DeploymentStageCode": "A1",
+            "courseExternalKey": "FLW_JPW_A1",
+            "moodleCourseId": 225,
+            "moodleCourseIdnumber": "FLW_JPW_A1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:21:55+09:00",
+            "updatedAt": "2026-08-30T18:41:06+09:00"
+        },
+        "FLW_JPW_A2": {
+            "WorldCode": "JPW",
+            "DeploymentStageCode": "A2",
+            "courseExternalKey": "FLW_JPW_A2",
+            "moodleCourseId": 226,
+            "moodleCourseIdnumber": "FLW_JPW_A2",
+            "status": "CREATE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:22:26+09:00",
+            "updatedAt": "2026-08-25T15:22:26+09:00"
+        },
+        "FLW_JPW_B1": {
+            "WorldCode": "JPW",
+            "DeploymentStageCode": "B1",
+            "courseExternalKey": "FLW_JPW_B1",
+            "moodleCourseId": 227,
+            "moodleCourseIdnumber": "FLW_JPW_B1",
+            "status": "CREATE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:22:49+09:00",
+            "updatedAt": "2026-08-25T15:22:49+09:00"
+        },
+        "FLW_JPW_B2": {
+            "WorldCode": "JPW",
+            "DeploymentStageCode": "B2",
+            "courseExternalKey": "FLW_JPW_B2",
+            "moodleCourseId": 228,
+            "moodleCourseIdnumber": "FLW_JPW_B2",
+            "status": "CREATE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:23:18+09:00",
+            "updatedAt": "2026-08-25T15:23:18+09:00"
+        },
+        "FLW_JPW_C1": {
+            "WorldCode": "JPW",
+            "DeploymentStageCode": "C1",
+            "courseExternalKey": "FLW_JPW_C1",
+            "moodleCourseId": 229,
+            "moodleCourseIdnumber": "FLW_JPW_C1",
+            "status": "CREATE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:23:43+09:00",
+            "updatedAt": "2026-08-25T15:23:43+09:00"
+        },
+        "FLW_FW_A1": {
+            "WorldCode": "FW",
+            "DeploymentStageCode": "A1",
+            "courseExternalKey": "FLW_FW_A1",
+            "moodleCourseId": 230,
+            "moodleCourseIdnumber": "FLW_FW_A1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:24:10+09:00",
+            "updatedAt": "2026-08-30T18:41:17+09:00"
+        },
+        "FLW_FW_A2": {
+            "WorldCode": "FW",
+            "DeploymentStageCode": "A2",
+            "courseExternalKey": "FLW_FW_A2",
+            "moodleCourseId": 231,
+            "moodleCourseIdnumber": "FLW_FW_A2",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:24:45+09:00",
+            "updatedAt": "2026-08-27T19:30:39+09:00"
+        },
+        "FLW_FW_B1": {
+            "WorldCode": "FW",
+            "DeploymentStageCode": "B1",
+            "courseExternalKey": "FLW_FW_B1",
+            "moodleCourseId": 232,
+            "moodleCourseIdnumber": "FLW_FW_B1",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:25:20+09:00",
+            "updatedAt": "2026-08-27T19:40:44+09:00"
+        },
+        "FLW_FW_B2": {
+            "WorldCode": "FW",
+            "DeploymentStageCode": "B2",
+            "courseExternalKey": "FLW_FW_B2",
+            "moodleCourseId": 233,
+            "moodleCourseIdnumber": "FLW_FW_B2",
+            "status": "REUSE_STAGE_COURSE",
+            "createdAt": "2026-08-25T15:25:50+09:00",
+            "updatedAt": "2026-08-27T19:40:50+09:00"
+        }
+    }
+}

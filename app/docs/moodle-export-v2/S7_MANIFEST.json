@@ -1,0 +1,260 @@
+{
+  "gate": "S7",
+  "status": "PASS",
+  "goNoGoForS8": "GO",
+  "generatedAt": "2026-08-24T10:00:00+09:00",
+  "scope": "Batch import, Moodle Course/Unit-Section mapping preview, progress/resume, and idempotency. S8 not started.",
+  "architecture": {
+    "worldStageToMoodleCourse": true,
+    "unitToMoodleSection": true,
+    "oneUnitScormActivityPerUnitSection": true,
+    "substantialComponentToSco": true,
+    "microActivitiesRemainInsideParentSco": true,
+    "batchOverwriteClearsStageCourse": false,
+    "batchClearAndAddEnabled": false,
+    "moodleCoreModified": false
+  },
+  "implemented": [
+    "Batch grouping by World + Deployment Stage",
+    "Direct language-root selection scoped to the selected language",
+    "Top SmartCourses root All Available Units selection across configured language roots",
+    "S7 catalog validation counts",
+    "Batch mapping preview with Course/Unit-Section hierarchy",
+    "Package-aware batch dry-run",
+    "Batch Overwrite upsert using existing S3/S4/S5 services",
+    "Batch Add New Unit collision handling",
+    "S7 rejection of Clear and Add",
+    "Persisted batch progress",
+    "Safe cancellation before Moodle mutation",
+    "No process termination during Moodle mutation",
+    "Resume with exported package reuse",
+    "Scoped real batch import locks",
+    "Async PHP stdout/stderr log spooling"
+  ],
+  "catalogValidation": {
+    "expectedTotal": 660,
+    "availableValidTotal": 601,
+    "selectedTotal": 601,
+    "missingOrInvalidTotal": 60,
+    "extraAvailableTotal": 1,
+    "spanishSourcePresent": false,
+    "worlds": [
+      {
+        "sourceRootCode": "01-adventure",
+        "label": "Adventure",
+        "worldCode": "AEW",
+        "expected": 72,
+        "availableValid": 72,
+        "selected": 72,
+        "missingOrInvalid": 0,
+        "extraAvailable": 0,
+        "preflightStatus": "RESOLVED"
+      },
+      {
+        "sourceRootCode": "02-real",
+        "label": "Real",
+        "worldCode": "REW",
+        "expected": 108,
+        "availableValid": 108,
+        "selected": 108,
+        "missingOrInvalid": 0,
+        "extraAvailable": 0,
+        "preflightStatus": "RESOLVED"
+      },
+      {
+        "sourceRootCode": "03-russian",
+        "label": "Russian",
+        "worldCode": "RUW",
+        "expected": 120,
+        "availableValid": 120,
+        "selected": 120,
+        "missingOrInvalid": 0,
+        "extraAvailable": 0,
+        "preflightStatus": "RESOLVED"
+      },
+      {
+        "sourceRootCode": "04-chinese",
+        "label": "Chinese",
+        "worldCode": "CHW",
+        "expected": 132,
+        "availableValid": 133,
+        "selected": 133,
+        "missingOrInvalid": 0,
+        "extraAvailable": 1,
+        "preflightStatus": "RESOLVED"
+      },
+      {
+        "sourceRootCode": "05-german",
+        "label": "German",
+        "worldCode": "GEW",
+        "expected": 72,
+        "availableValid": 60,
+        "selected": 60,
+        "missingOrInvalid": 12,
+        "extraAvailable": 0,
+        "preflightStatus": "RESOLVED"
+      },
+      {
+        "sourceRootCode": "06-japanese",
+        "label": "Japanese",
+        "worldCode": "JPW",
+        "expected": 60,
+        "availableValid": 60,
+        "selected": 60,
+        "missingOrInvalid": 0,
+        "extraAvailable": 0,
+        "preflightStatus": "RESOLVED"
+      },
+      {
+        "sourceRootCode": "07-spanish",
+        "label": "Spanish",
+        "worldCode": "SW",
+        "expected": 48,
+        "availableValid": 0,
+        "selected": 0,
+        "missingOrInvalid": 48,
+        "extraAvailable": 0,
+        "preflightStatus": "SOURCE_ROOT_NOT_FOUND"
+      },
+      {
+        "sourceRootCode": "08-french",
+        "label": "French",
+        "worldCode": "FW",
+        "expected": 48,
+        "availableValid": 48,
+        "selected": 48,
+        "missingOrInvalid": 0,
+        "extraAvailable": 0,
+        "preflightStatus": "RESOLVED"
+      }
+    ]
+  },
+  "fullCatalogDryRun": {
+    "sourceRoot": "D:\\WinPro.Delta\\Projects\\SmartCourses",
+    "batchPlanId": "f2f3c7f1ae269115b41bc9a9cb712be112eb84c88debc8dff90c90bca5436fc6",
+    "stageGroupCount": 26,
+    "exportedPackages": 601,
+    "elapsedSeconds": 1714.98,
+    "artifactSize": "about 18.1 GB",
+    "preflight": {
+      "RESOLVED": 345,
+      "STAGE_UNRESOLVED": 256,
+      "blockingCount": 256,
+      "blockedForRealImport": true
+    },
+    "summary": {
+      "stageCourseCount": 24,
+      "reusedStageCourses": 3,
+      "wouldCreateStageCourses": 20,
+      "legacyUnitCoursesFound": 18,
+      "unitSectionCount": 601,
+      "wouldCreateUnitSections": 326,
+      "reusedUnitSections": 19,
+      "unitSectionFailures": 256,
+      "scormCreated": 326,
+      "scormUpdated": 1,
+      "scormUnchanged": 18,
+      "scormFailures": 256,
+      "unitsCreated": 326,
+      "unitsUpdated": 1,
+      "unitsUnchanged": 18,
+      "unitsBlocked": 256,
+      "manualContentPreserved": 345,
+      "attemptsPreserved": 345
+    },
+    "manifestPath": "D:\\WinPro.Delta\\Projects\\SmartCourses\\_s7_full_catalog_dryrun_exports\\flw_batch_20260824_090103_754253\\batch_manifest.json",
+    "reportPath": "D:\\WinPro.Delta\\Projects\\SmartCourses\\_s7_full_catalog_dryrun_exports\\flw_batch_20260824_090103_754253\\batch_flw_import_report.json"
+  },
+  "realMoodleBatch": {
+    "sourceRoot": "D:\\WinPro.Delta\\Projects\\SmartCourses\\02-Real",
+    "range": "U019-U036",
+    "stageGroup": "REW:A2",
+    "courseExternalKey": "FLW_REW_A2",
+    "firstRun": {
+      "created": 17,
+      "updated": 0,
+      "unchanged": 0,
+      "failed": 1,
+      "failedUnit": "REW-U023",
+      "failure": "SCORM_UPDATE_FAILED: Cannot create local file pool file."
+    },
+    "retry": {
+      "created": 0,
+      "updated": 1,
+      "unchanged": 17,
+      "failed": 0,
+      "publicStatus": "SUCCESS"
+    },
+    "exactRepeat": {
+      "created": 0,
+      "updated": 0,
+      "unchanged": 18,
+      "failed": 0,
+      "publicStatus": "UNCHANGED"
+    }
+  },
+  "cancelResume": {
+    "jobId": "20260824_094841_8b571ede",
+    "sourceRoot": "D:\\WinPro.Delta\\Projects\\SmartCourses\\02-Real",
+    "range": "U021-U024",
+    "cancel": {
+      "status": "canceled",
+      "phase": "canceled",
+      "processedCount": 2,
+      "exportedCount": 2
+    },
+    "resume": {
+      "status": "complete",
+      "phase": "complete",
+      "processedCount": 4,
+      "exportedCount": 4,
+      "reusedExportedPackages": 2,
+      "publicStatus": "UNCHANGED"
+    }
+  },
+  "tests": {
+    "pythonCompile": "PASS",
+    "nodeSyntax": "PASS",
+    "phpSyntax": "PASS",
+    "phpLintSweep": "PASS",
+    "smokeTest": "PASS",
+    "directLanguageRangeSelection": "PASS",
+    "mixedStageGrouping": "PASS",
+    "topRootMultiWorldSelection": "PASS",
+    "batchOverwriteReal": "PASS_WITH_TRANSIENT_RETRY",
+    "idempotency": "PASS",
+    "addNewUnitCollision": "PASS",
+    "fullCatalogPreview": "PASS_WITH_REPORTED_BLOCKERS",
+    "fullCatalogPackageAwareDryRun": "PASS_WITH_REPORTED_BLOCKERS",
+    "cancelResume": "PASS",
+    "s2bRegression": "PASS_WITH_PRIOR_BROWSER_EVIDENCE_AND_CURRENT_NAV_RUNTIME_SMOKE"
+  },
+  "risks": [
+    "Full production all-catalog import remains blocked by 256 unresolved Stage mappings.",
+    "Spanish source root is expected but absent.",
+    "German has 60 available valid Units against expected 72.",
+    "Chinese has 133 available valid Units against expected 132.",
+    "Full dry-run artifacts occupy about 18.1 GB.",
+    "Moodle local file-pool health should be watched before massive real imports."
+  ],
+  "filesChanged": [
+    "server.py",
+    "static/index.html",
+    "static/app.js",
+    "scripts/import_scorm_pilot_to_moodle.php",
+    "scripts/smoke_test.py",
+    "flw_moodle_stage_course_map.json",
+    "flw_moodle_unit_section_map.json",
+    "flw_moodle_unit_scorm_map.json",
+    "docs/moodle-export-v2/S7_BATCH_ARCHITECTURE.md",
+    "docs/moodle-export-v2/S7_GROUPING_RULES.md",
+    "docs/moodle-export-v2/S7_BATCH_PREVIEW.md",
+    "docs/moodle-export-v2/S7_PROGRESS_RESUME.md",
+    "docs/moodle-export-v2/S7_BATCH_STATUS_CONTRACT.md",
+    "docs/moodle-export-v2/S7_FULL_CATALOG_VALIDATION.md",
+    "docs/moodle-export-v2/S7_TEST_REPORT.md",
+    "docs/moodle-export-v2/S7_REPORT.md",
+    "docs/moodle-export-v2/S7_MANIFEST.json"
+  ],
+  "s8Started": false
+}

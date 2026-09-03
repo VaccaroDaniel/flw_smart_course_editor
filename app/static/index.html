@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FLW Unit Package GUI</title>
+  <link rel="stylesheet" href="/static/style.css?v=27">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">FLW Unit Packages</div>
+      <div class="root-row">
+        <input id="rootInput" spellcheck="false" aria-label="Course root directory">
+        <button id="browseRoot" class="compact-btn" title="Select course root directory">...</button>
+        <button id="refreshUnits" class="icon-btn" title="Refresh units" aria-label="Refresh units">↻</button>
+      </div>
+      <div class="unit-tools">
+        <input id="unitFilter" placeholder="Filter units" spellcheck="false">
+        <span id="unitCount">0</span>
+      </div>
+      <div id="unitList" class="unit-list"></div>
+    </aside>
+
+    <main class="workspace">
+      <header class="unit-header">
+        <div>
+          <div class="eyebrow" id="selectedPath">No unit selected</div>
+          <h1 id="unitTitle">Select a unit</h1>
+        </div>
+        <div class="header-actions">
+          <button id="copyUnitBtn" title="Copy selected unit to a new unit number">Copy unit</button>
+          <button id="validateBtn">Validate</button>
+          <button id="exportBtn" class="primary">Export / FLW Import</button>
+        </div>
+      </header>
+
+      <nav class="tabs">
+        <button class="tab active" data-tab="preview">Preview</button>
+        <button class="tab" data-tab="unitData">Unit Data</button>
+        <button class="tab" data-tab="files">Files</button>
+        <button class="tab" data-tab="csv">CSV</button>
+        <button class="tab" data-tab="export">Export / FLW Import</button>
+      </nav>
+
+      <section id="previewPanel" class="panel active">
+        <div class="preview-tools">
+          <div>
+            <button id="startVisualEditBtn" class="icon-btn visual-edit-toggle" title="Start visual editing" aria-label="Start visual editing">✎</button>
+            <button id="undoVisualEditBtn" class="icon-btn" title="Undo visual edit" aria-label="Undo visual edit" disabled>↶</button>
+            <button id="redoVisualEditBtn" class="icon-btn" title="Redo visual edit" aria-label="Redo visual edit" disabled>↷</button>
+            <button id="showEditableBtn" class="icon-btn" title="Show editable text finder" aria-label="Show editable text finder">◎</button>
+            <button id="saveVisualEditsBtn" class="primary icon-btn" title="Save visual edits" aria-label="Save visual edits" disabled>💾</button>
+            <button id="clearVisualEditsBtn" class="icon-btn" title="Clear visual edits" aria-label="Clear visual edits">🧹</button>
+          </div>
+          <span id="visualEditStatus">Preview is read-only.</span>
+          <button id="visualPanelToggleBtn" class="visual-panel-toolbar-toggle" title="Open or close the visual edit action panel." aria-controls="visualActionPanel" aria-expanded="false">Edit panel</button>
+        </div>
+        <div id="visualActionPanel" class="visual-action-panel">
+          <div class="selected-info">
+            <b>Selected</b>
+            <span id="visualSelectedInfo">Nothing selected</span>
+            <button id="selectParentBtn" class="icon-btn mini-icon-btn" title="Select parent block" aria-label="Select parent block">⌃</button>
+            <button id="selectChildBtn" class="icon-btn mini-icon-btn" title="Select first editable child" aria-label="Select first editable child">⌄</button>
+          </div>
+          <div class="action-row style-actions">
+            <select id="stylePresetSelect" title="Style selected block" aria-label="Style selected block">
+              <option value="none">No style</option>
+              <option value="card">Card</option>
+              <option value="highlight">Highlight</option>
+              <option value="note">Note</option>
+              <option value="tip">Tip</option>
+              <option value="warning">Warning</option>
+              <option value="quote">Quote</option>
+              <option value="hero">Hero</option>
+              <option value="soft">Soft</option>
+              <option value="custom">Custom</option>
+            </select>
+            <button id="applyStyleBtn" class="icon-btn" title="Apply selected style to block" aria-label="Apply selected style to block">🎨</button>
+          </div>
+          <div class="action-row custom-style-actions">
+            <label>Bg <input id="customStyleBg" type="color" value="#f5f8fb"></label>
+            <label>Border <input id="customStyleBorder" type="color" value="#d9e3eb"></label>
+            <label>Padding <input id="customStylePadding" type="number" min="0" max="80" value="14"></label>
+            <label>Radius <input id="customStyleRadius" type="number" min="0" max="80" value="14"></label>
+            <label class="inline-check"><input id="customStyleShadow" type="checkbox"> Shadow</label>
+            <button id="applyCustomStyleBtn" class="icon-btn" title="Apply custom style" aria-label="Apply custom style">🎛</button>
+          </div>
+          <div class="action-row text-actions">
+            <input id="textValueInput" placeholder="Selected text / button title" spellcheck="false">
+            <button id="applyTextBtn" class="icon-btn" title="Change selected text or button title" aria-label="Change selected text or button title">Aa</button>
+          </div>
+          <div class="action-row link-actions">
+            <input id="linkHrefInput" placeholder="Link target / href" spellcheck="false">
+            <button id="applyLinkBtn" class="icon-btn" title="Change selected link target" aria-label="Change selected link target">🔗</button>
+          </div>
+          <div class="action-row image-actions">
+            <input id="imagePathInput" list="unitImageOptions" placeholder="assets/images/example.png" spellcheck="false">
+            <datalist id="unitImageOptions"></datalist>
+            <input id="imageAltInput" placeholder="Alt text" spellcheck="false">
+            <button id="importImageBtn" class="icon-btn" title="Import an image into this unit" aria-label="Import image">＋</button>
+            <button id="applyImageBtn" class="icon-btn" title="Change picture" aria-label="Change picture">🖼</button>
+          </div>
+          <div class="action-row media-actions">
+            <input id="mediaSourceInput" list="unitMediaOptions" placeholder="assets/audio/example.mp3 or assets/video/example.mp4" spellcheck="false">
+            <datalist id="unitMediaOptions"></datalist>
+            <button id="importMediaBtn" class="icon-btn" title="Import audio or video into this unit" aria-label="Import audio or video">＋</button>
+            <button id="applyMediaBtn" class="icon-btn" title="Change selected audio/video source" aria-label="Change selected audio/video source">🎞</button>
+          </div>
+          <div class="action-row">
+            <button id="moveBlockToTopBtn" class="icon-btn" title="Move selected block to top" aria-label="Move selected block to top">↑</button>
+            <button id="duplicateBlockBtn" class="icon-btn" title="Duplicate selected block" aria-label="Duplicate selected block">⧉</button>
+            <button id="removeBlockBtn" class="icon-btn" title="Remove selected block" aria-label="Remove selected block">🗑</button>
+          </div>
+          <div class="action-row add-blocks">
+            <input id="newBlockTitle" placeholder="New block title" spellcheck="false">
+            <input id="newBlockText" placeholder="New block text" spellcheck="false">
+            <button id="addTextBlockBtn" class="icon-btn" title="Add text block" aria-label="Add text block">T+</button>
+          </div>
+          <div class="action-row add-blocks">
+            <input id="newImagePath" list="unitImageOptions" placeholder="Image path" spellcheck="false">
+            <input id="newImageCaption" placeholder="Caption" spellcheck="false">
+            <button id="addImageBlockBtn" class="icon-btn" title="Add image block" aria-label="Add image block">🖼+</button>
+          </div>
+          <div id="visualHistoryList" class="visual-history-list">No visual edit history.</div>
+        </div>
+        <iframe id="previewFrame" title="Unit preview"></iframe>
+      </section>
+
+      <section id="unitDataPanel" class="panel data-editor">
+        <div class="data-nav">
+          <button class="data-view-btn active" data-data-view="overview">Overview</button>
+          <button class="data-view-btn" data-data-view="vocab">Vocabulary</button>
+          <button class="data-view-btn" data-data-view="lessons">Lessons</button>
+          <button class="data-view-btn" data-data-view="watch">Watch Script</button>
+          <button class="data-view-btn" data-data-view="raw">Raw JSON</button>
+          <div id="unitDataSummary" class="data-summary"></div>
+        </div>
+        <div class="data-work">
+          <div class="editor-bar">
+            <span id="unitDataLabel">No unit data loaded</span>
+            <button id="saveUnitDataBtn" class="primary">Save unit data</button>
+          </div>
+          <div class="data-scroll">
+            <div id="unitDataStatus" class="status-line"></div>
+            <section id="overviewDataView" class="unit-data-view active">
+              <div id="overviewFields" class="form-grid"></div>
+            </section>
+            <section id="vocabDataView" class="unit-data-view">
+              <div class="table-actions"><button id="addVocabBtn">Add vocabulary row</button></div>
+              <div id="vocabEditor" class="unit-table-wrap"></div>
+            </section>
+            <section id="lessonsDataView" class="unit-data-view">
+              <div class="table-actions"><button id="addLessonBtn">Add lesson row</button></div>
+              <div id="lessonsEditor" class="unit-table-wrap"></div>
+            </section>
+            <section id="watchDataView" class="unit-data-view">
+              <div class="table-actions"><button id="addWatchBtn">Add watch line</button></div>
+              <div id="watchEditor" class="unit-table-wrap"></div>
+            </section>
+            <section id="rawDataView" class="unit-data-view">
+              <textarea id="rawUnitDataEditor" spellcheck="false"></textarea>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section id="filesPanel" class="panel split">
+        <div class="file-list-wrap">
+          <input id="fileFilter" placeholder="Filter files" spellcheck="false">
+          <div id="fileList" class="file-list"></div>
+        </div>
+        <div class="editor-wrap">
+          <div class="editor-bar">
+            <span id="openFileLabel">No file open</span>
+            <button id="saveFileBtn">Save file</button>
+          </div>
+          <textarea id="textEditor" spellcheck="false"></textarea>
+        </div>
+      </section>
+
+      <section id="csvPanel" class="panel split">
+        <div class="file-list-wrap">
+          <div id="csvList" class="file-list"></div>
+        </div>
+        <div class="csv-wrap">
+          <div class="editor-bar">
+            <span id="openCsvLabel">No CSV open</span>
+            <div>
+              <button id="addCsvRowBtn">Add row</button>
+              <button id="saveCsvBtn">Save CSV</button>
+            </div>
+          </div>
+          <div id="csvGrid" class="csv-grid"></div>
+        </div>
+      </section>
+
+      <section id="exportPanel" class="panel export-grid">
+        <div class="export-card export-workflow-card">
+          <details class="export-section" open>
+            <summary>
+              <span>1. Package Settings</span>
+              <small>Build one SCORM package from the selected unit.</small>
+            </summary>
+            <div class="export-section-body">
+              <label>Package title<input id="scormTitle"></label>
+              <label>Identifier<input id="scormIdentifier"></label>
+              <label>Export folder
+                <span class="path-picker">
+                  <input id="exportDir" spellcheck="false">
+                  <button id="browseExportDir" type="button" class="compact-btn" title="Select SCORM export folder">...</button>
+                </span>
+              </label>
+              <label>Launch file<input id="launchFile" value="index.html"></label>
+              <div class="checks">
+                <label><input id="includeSourceData" type="checkbox"> Include source_data</label>
+                <label><input id="includeTools" type="checkbox"> Include unit tools</label>
+                <label><input id="includeUnitSco" type="checkbox"> Also include whole-unit SCO</label>
+                <label><input id="keepTopNavBar" type="checkbox"> Keep unit top nav bar</label>
+                <label><input id="autocomplete" type="checkbox" checked> Mark complete on launch</label>
+              </div>
+              <div class="button-stack">
+                <button id="refreshScormPreviewBtn" class="wide" type="button">Refresh package structure preview</button>
+                <button id="runExportBtn" class="primary wide">Build SCORM zip</button>
+              </div>
+            </div>
+          </details>
+
+          <details class="export-section" open>
+            <summary>
+              <span>2. Moodle Destination</span>
+              <small>Confirm where imports will go before running them.</small>
+            </summary>
+            <div class="export-section-body">
+              <label>Moodle URL<input id="moodleUrl" spellcheck="false" placeholder="https://your-moodle-site"></label>
+              <details class="advanced-section">
+                <summary>Moodle local runtime paths</summary>
+                <label>Moodle PHP path<input id="moodlePhpPath" spellcheck="false" placeholder="D:\...\php.exe"></label>
+                <label>Moodle config.php path<input id="moodleConfigPath" spellcheck="false" placeholder="D:\...\moodle\config.php"></label>
+              </details>
+              <div id="moodleTargetSummary" class="moodle-target-summary" aria-live="polite">
+                <div class="summary-empty">Preview a destination to resolve the Moodle course, section, and activity.</div>
+              </div>
+            </div>
+          </details>
+
+          <details class="export-section" open>
+            <summary>
+              <span>3. Single Unit</span>
+              <small>Preview or deploy only the selected unit.</small>
+            </summary>
+            <div class="export-section-body">
+              <label>Import Mode
+                <select id="flwImportMode">
+                  <option value="overwrite" selected>Overwrite</option>
+                  <option value="add_new">Add New Unit</option>
+                </select>
+              </label>
+              <p class="hint-text">Single deploy uses the production hierarchy: FLW World + Stage → Moodle Course → Unit Section → one current Unit SCORM.</p>
+              <div class="button-stack">
+                <button id="previewFlwImportBtn" class="wide" type="button">Preview Moodle destination</button>
+                <button id="exportToFlwBtn" class="primary wide" type="button">Build + deploy selected unit</button>
+              </div>
+            </div>
+          </details>
+
+          <details class="export-section" open>
+            <summary>
+              <span>4. Batch</span>
+              <small>Deploy many units by language/world.</small>
+            </summary>
+            <div class="export-section-body">
+              <label>Import Mode
+                <select id="batchFlwImportMode">
+                  <option value="overwrite" selected>Overwrite</option>
+                  <option value="add_new">Add New Unit</option>
+                  <option value="clear_add">Rebuild Selected FLW Scope</option>
+                </select>
+              </label>
+              <label>Production Scope
+                <select id="batchProductionScope">
+                  <option value="">All configured worlds</option>
+                  <option value="seven_world_production" selected>Current production: 7 worlds</option>
+                </select>
+              </label>
+              <label>World Selection
+                <select id="batchWorldScope">
+                  <option value="all" selected>All worlds in production scope</option>
+                  <option value="current">Currently selected world</option>
+                  <option value="specific">Choose a specific world</option>
+                </select>
+              </label>
+              <label id="batchSpecificWorldLabel" hidden>Specific World
+                <select id="batchSpecificWorld"></select>
+              </label>
+              <div class="checks">
+                <label><input id="batchAllUnits" type="checkbox" checked> All available units in selected world scope</label>
+              </div>
+              <div class="batch-range">
+                <label>Unit from<input id="batchUnitStart" placeholder="001" inputmode="numeric"></label>
+                <label>Unit to<input id="batchUnitEnd" placeholder="010" inputmode="numeric"></label>
+              </div>
+              <div class="checks">
+                <label><input id="batchDryRun" type="checkbox" checked> Dry run only</label>
+              </div>
+              <div class="button-stack">
+                <button id="previewBatchCoursesBtn" class="wide" type="button">Preview Moodle Course / Unit-Section Mapping</button>
+                <button id="batchImportToFlwBtn" class="wide" type="button">Batch deploy Unit SCORM</button>
+                <button id="importCompletedDryRunBtn" class="wide secondary" type="button">Import completed dry-run packages</button>
+              </div>
+              <div class="batch-actions">
+                <button id="cancelBatchJobBtn" type="button" disabled>Cancel batch</button>
+                <button id="resumeBatchJobBtn" type="button">Resume last batch</button>
+              </div>
+              <p class="hint-text">Batch deploy groups Units by World+Stage, resolves each Moodle Course once, then creates/reuses one Unit Section and one current Unit SCORM per FLW Unit. Use “Import completed dry-run packages” when you already built packages in a successful dry run and only want to import them.</p>
+            </div>
+          </details>
+
+          <details class="export-section">
+            <summary>
+              <span>Source ZIP</span>
+              <small>Write cache edits back to the original unit ZIP.</small>
+            </summary>
+            <div class="export-section-body">
+              <button id="saveBackZipBtn" class="wide danger" disabled>Save back to source ZIP</button>
+              <p id="zipStatusBadge" class="zip-status-badge">ZIP status: no unit selected.</p>
+              <p id="zipSaveHint" class="hint-text">Select a ZIP-backed unit to update its original ZIP.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="export-card export-results-card">
+          <details class="export-section" open>
+            <summary>
+              <span>5. Results</span>
+              <small>Human summary first; raw log stays collapsible.</small>
+            </summary>
+            <div class="export-section-body">
+              <div id="exportResult" class="result-panel result-empty">
+                <div class="summary-empty">No export or import has run yet.</div>
+              </div>
+            </div>
+          </details>
+          <details class="export-section" open>
+            <summary><span>Validation</span><small>Current unit health.</small></summary>
+            <div class="export-section-body">
+              <div id="validationSummary" class="status-box"></div>
+            </div>
+          </details>
+          <details class="export-section">
+            <summary><span>Broken Assets</span><small>Missing local references and quick replacements.</small></summary>
+            <div class="export-section-body">
+              <div id="brokenAssetsDashboard" class="broken-assets-dashboard"></div>
+            </div>
+          </details>
+          <details class="export-section">
+            <summary><span>Backups / Restore</span><small>Restore timestamped file backups.</small></summary>
+            <div class="export-section-body">
+              <div id="backupDashboard" class="backup-dashboard"></div>
+            </div>
+          </details>
+          <details class="export-section" open>
+            <summary><span>SCORM Structure Preview</span><small>Package sections and launch files.</small></summary>
+            <div class="export-section-body">
+              <div id="scormStructurePreview" class="status-box scorm-structure-preview"></div>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="floating-toolbox" aria-label="Quick navigation">
+    <button id="unitsToTopBtn" title="Move the unit list to the top">↑ Units</button>
+  </nav>
+  <input id="assetImportInput" type="file" hidden>
+  <div id="copyUnitModal" class="modal-backdrop" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="copyUnitModalTitle">
+      <h2 id="copyUnitModalTitle">Copy unit</h2>
+      <div class="modal-grid">
+        <label>New unit number
+          <input id="copyTargetUnit" inputmode="numeric" placeholder="001">
+        </label>
+        <label>New unit title
+          <input id="copyTitle" spellcheck="false">
+        </label>
+        <label>Output type
+          <select id="copyOutputType">
+            <option value="auto">Auto - keep source style</option>
+            <option value="zip">ZIP package</option>
+            <option value="folder">Folder</option>
+          </select>
+        </label>
+      </div>
+      <div id="copyModalSummary" class="modal-summary"></div>
+      <div class="modal-actions">
+        <button id="cancelCopyUnitBtn" type="button">Cancel</button>
+        <button id="confirmCopyUnitBtn" type="button" class="primary">Copy unit</button>
+      </div>
+    </div>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="/static/app.js?v=39"></script>
+</body>
+</html>

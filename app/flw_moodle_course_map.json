@@ -1,0 +1,380 @@
+{
+  "schemaVersion": 1,
+  "description": "S1 FLW World + deployment-stage metadata map. Moodle numeric course IDs are intentionally not canonical identity.",
+  "stageNormalization": {
+    "allowMajorCefrFallback": true,
+    "majorCefrPattern": "^(A1|A2|B1|B2|C1|C2)(?:[._-]?[0-9]+)?\\+?$",
+    "preA1Pattern": "^PRE[-_ ]?A1(?:[._-]?[0-9]+)?\\+?$"
+  },
+  "worlds": {
+    "01-adventure": {
+      "sourceRootCode": "01-adventure",
+      "worldCode": "AEW",
+      "worldTitle": "Adventure English World",
+      "languageCode": "en",
+      "sourceRootMarkers": ["01-adventure", "adventure", "aew", "aew2"],
+      "category": {
+        "id": 12,
+        "source": "current Moodle category tree: English / Self Study / Adventure English World"
+      },
+      "stagePolicy": {
+        "allowMajorCefrFallback": true,
+        "authoritativeRule": "S7B Adventure package UNIT_DATA stages plus checkpoint title metadata define deployment-stage ranges"
+      },
+      "stageRules": [
+        {
+          "stageCode": "Pre-A1",
+          "unitStart": 1,
+          "unitEnd": 12,
+          "courseShortname": "FLW-AEW-PRE-A1",
+          "courseIdnumber": "FLW_AEW_PRE_A1"
+        },
+        {
+          "stageCode": "A1",
+          "unitStart": 13,
+          "unitEnd": 30,
+          "courseShortname": "FLW-AEW-A1",
+          "courseIdnumber": "FLW_AEW_A1"
+        },
+        {
+          "stageCode": "A2",
+          "unitStart": 31,
+          "unitEnd": 48,
+          "courseShortname": "FLW-AEW-A2",
+          "courseIdnumber": "FLW_AEW_A2"
+        },
+        {
+          "stageCode": "B1",
+          "unitStart": 49,
+          "unitEnd": 72,
+          "courseShortname": "FLW-AEW-B1",
+          "courseIdnumber": "FLW_AEW_B1"
+        }
+      ]
+    },
+    "02-real": {
+      "sourceRootCode": "02-real",
+      "worldCode": "REW",
+      "worldTitle": "Real English World",
+      "languageCode": "en",
+      "sourceRootMarkers": ["02-real", "real", "rew", "rew2"],
+      "category": {
+        "id": 13,
+        "source": "current Moodle category tree: English / Self Study / Real English World"
+      },
+      "stagePolicy": {
+        "allowMajorCefrFallback": true,
+        "authoritativeRule": "canonical Real English frozen deployment-stage ranges"
+      },
+      "stageRules": [
+        {
+          "stageCode": "A1",
+          "unitStart": 1,
+          "unitEnd": 18,
+          "courseShortname": "FLW-REW-A1",
+          "courseIdnumber": "FLW_REW_A1"
+        },
+        {
+          "stageCode": "A2",
+          "unitStart": 19,
+          "unitEnd": 36,
+          "courseShortname": "FLW-REW-A2",
+          "courseIdnumber": "FLW_REW_A2"
+        },
+        {
+          "stageCode": "B1",
+          "unitStart": 37,
+          "unitEnd": 60,
+          "courseShortname": "FLW-REW-B1",
+          "courseIdnumber": "FLW_REW_B1"
+        },
+        {
+          "stageCode": "B2",
+          "unitStart": 61,
+          "unitEnd": 84,
+          "courseShortname": "FLW-REW-B2",
+          "courseIdnumber": "FLW_REW_B2"
+        },
+        {
+          "stageCode": "C1",
+          "unitStart": 85,
+          "unitEnd": 108,
+          "courseShortname": "FLW-REW-C1",
+          "courseIdnumber": "FLW_REW_C1"
+        }
+      ]
+    },
+    "03-russian": {
+      "sourceRootCode": "03-russian",
+      "worldCode": "RUW",
+      "worldTitle": "Russian World",
+      "languageCode": "ru",
+      "sourceRootMarkers": ["03-russian", "russian", "ruw", "ruw2"],
+      "category": {
+        "id": 25,
+        "source": "current Moodle category tree: Russian / Self Study / Russian World"
+      },
+      "stagePolicy": {
+        "allowMajorCefrFallback": true,
+        "authoritativeRule": "S7B RUW2 CEFR_KP_map.md metadata defines deployment-stage ranges; U073-U088 are B1.3/B1 and U089-U096 are B2"
+      },
+      "stageRules": [
+        {
+          "stageCode": "A1",
+          "unitStart": 1,
+          "unitEnd": 24,
+          "courseShortname": "FLW-RUW-A1",
+          "courseIdnumber": "FLW_RUW_A1"
+        },
+        {
+          "stageCode": "A2",
+          "unitStart": 25,
+          "unitEnd": 48,
+          "courseShortname": "FLW-RUW-A2",
+          "courseIdnumber": "FLW_RUW_A2"
+        },
+        {
+          "stageCode": "B1",
+          "unitStart": 49,
+          "unitEnd": 88,
+          "courseShortname": "FLW-RUW-B1",
+          "courseIdnumber": "FLW_RUW_B1"
+        },
+        {
+          "stageCode": "B2",
+          "unitStart": 89,
+          "unitEnd": 96,
+          "courseShortname": "FLW-RUW-B2",
+          "courseIdnumber": "FLW_RUW_B2"
+        },
+        {
+          "stageCode": "C1",
+          "unitStart": 97,
+          "unitEnd": 120,
+          "courseShortname": "FLW-RUW-C1",
+          "courseIdnumber": "FLW_RUW_C1"
+        }
+      ]
+    },
+    "04-chinese": {
+      "sourceRootCode": "04-chinese",
+      "worldCode": "CHW",
+      "worldTitle": "Chinese World",
+      "languageCode": "zh",
+      "sourceRootMarkers": ["04-chinese", "chinese", "cw", "chw", "chw2"],
+      "category": {
+        "id": 95,
+        "source": "current Moodle category tree: 汉语 / Self Study / Chinese World"
+      },
+      "stagePolicy": {
+        "allowMajorCefrFallback": true,
+        "authoritativeRule": "S7B Chinese package title/folder/checkpoint/README/package-integrity metadata define deployment-stage ranges; U134 is an extra source package outside the current 132-Unit production scope"
+      },
+      "stageRules": [
+        {
+          "stageCode": "A1",
+          "unitStart": 1,
+          "unitEnd": 30,
+          "courseShortname": "FLW-CHW-A1",
+          "courseIdnumber": "FLW_CHW_A1"
+        },
+        {
+          "stageCode": "A2",
+          "unitStart": 31,
+          "unitEnd": 60,
+          "courseShortname": "FLW-CHW-A2",
+          "courseIdnumber": "FLW_CHW_A2"
+        },
+        {
+          "stageCode": "B1",
+          "unitStart": 61,
+          "unitEnd": 84,
+          "courseShortname": "FLW-CHW-B1",
+          "courseIdnumber": "FLW_CHW_B1"
+        },
+        {
+          "stageCode": "B2",
+          "unitStart": 85,
+          "unitEnd": 108,
+          "courseShortname": "FLW-CHW-B2",
+          "courseIdnumber": "FLW_CHW_B2"
+        },
+        {
+          "stageCode": "C1",
+          "unitStart": 109,
+          "unitEnd": 132,
+          "courseShortname": "FLW-CHW-C1",
+          "courseIdnumber": "FLW_CHW_C1"
+        }
+      ]
+    },
+    "05-german": {
+      "sourceRootCode": "05-german",
+      "worldCode": "GEW",
+      "worldTitle": "German World",
+      "languageCode": "de",
+      "sourceRootMarkers": ["05-german", "german", "gw", "gew", "gew2", "gw3"],
+      "category": {
+        "id": 48,
+        "source": "current Moodle category tree: German / Self Study / German World"
+      },
+      "stagePolicy": {
+        "allowMajorCefrFallback": true,
+        "allowFilenameStageToken": true,
+        "authoritativeRule": "S7B package filename CEFR tokens define available GEW deployment-stage ranges; expected U061-U072 source packages are not present"
+      },
+      "stageRules": [
+        {
+          "stageCode": "A1",
+          "unitStart": 1,
+          "unitEnd": 12,
+          "courseShortname": "FLW-GEW-A1",
+          "courseIdnumber": "FLW_GEW_A1"
+        },
+        {
+          "stageCode": "A2",
+          "unitStart": 13,
+          "unitEnd": 24,
+          "courseShortname": "FLW-GEW-A2",
+          "courseIdnumber": "FLW_GEW_A2"
+        },
+        {
+          "stageCode": "B1",
+          "unitStart": 25,
+          "unitEnd": 36,
+          "courseShortname": "FLW-GEW-B1",
+          "courseIdnumber": "FLW_GEW_B1"
+        },
+        {
+          "stageCode": "B2",
+          "unitStart": 37,
+          "unitEnd": 48,
+          "courseShortname": "FLW-GEW-B2",
+          "courseIdnumber": "FLW_GEW_B2"
+        },
+        {
+          "stageCode": "C1",
+          "unitStart": 49,
+          "unitEnd": 60,
+          "courseShortname": "FLW-GEW-C1",
+          "courseIdnumber": "FLW_GEW_C1"
+        }
+      ]
+    },
+    "06-japanese": {
+      "sourceRootCode": "06-japanese",
+      "worldCode": "JPW",
+      "worldTitle": "Japanese World",
+      "languageCode": "ja",
+      "sourceRootMarkers": ["06-japanese", "japanese", "jw", "jpw", "jpw2", "jw3"],
+      "category": {
+        "id": 60,
+        "source": "current Moodle category tree: Japanese / Self Study / Japanese World"
+      },
+      "stagePolicy": {
+        "allowMajorCefrFallback": true,
+        "allowFilenameStageToken": true,
+        "authoritativeRule": "S7B package manifest.json metadata and filename CEFR tokens define JPW deployment-stage ranges"
+      },
+      "stageRules": [
+        {
+          "stageCode": "A1",
+          "unitStart": 1,
+          "unitEnd": 12,
+          "courseShortname": "FLW-JPW-A1",
+          "courseIdnumber": "FLW_JPW_A1"
+        },
+        {
+          "stageCode": "A2",
+          "unitStart": 13,
+          "unitEnd": 24,
+          "courseShortname": "FLW-JPW-A2",
+          "courseIdnumber": "FLW_JPW_A2"
+        },
+        {
+          "stageCode": "B1",
+          "unitStart": 25,
+          "unitEnd": 36,
+          "courseShortname": "FLW-JPW-B1",
+          "courseIdnumber": "FLW_JPW_B1"
+        },
+        {
+          "stageCode": "B2",
+          "unitStart": 37,
+          "unitEnd": 48,
+          "courseShortname": "FLW-JPW-B2",
+          "courseIdnumber": "FLW_JPW_B2"
+        },
+        {
+          "stageCode": "C1",
+          "unitStart": 49,
+          "unitEnd": 60,
+          "courseShortname": "FLW-JPW-C1",
+          "courseIdnumber": "FLW_JPW_C1"
+        }
+      ]
+    },
+    "07-spanish": {
+      "sourceRootCode": "07-spanish",
+      "worldCode": "SW",
+      "worldTitle": "Spanish World",
+      "languageCode": "es",
+      "sourceRootMarkers": ["07-spanish", "spanish", "sw", "spw", "espanol", "español"],
+      "category": {
+        "id": 72,
+        "source": "current Moodle category tree: Spanish / Self Study / Spanish World"
+      },
+      "stagePolicy": {
+        "allowMajorCefrFallback": true,
+        "authoritativeRule": "unit metadata/explicit deployment stage only; no unit-number ranges defined in S1"
+      },
+      "stageRules": []
+    },
+    "08-french": {
+      "sourceRootCode": "08-french",
+      "worldCode": "FW",
+      "worldTitle": "French World",
+      "languageCode": "fr",
+      "sourceRootMarkers": ["08-french", "french", "fw", "fw_u"],
+      "category": {
+        "id": 84,
+        "source": "current Moodle category tree: French / Self Study / French World"
+      },
+      "stagePolicy": {
+        "allowMajorCefrFallback": true,
+        "allowFilenameStageToken": true,
+        "authoritativeRule": "S7B package filename CEFR tokens define FW deployment-stage ranges"
+      },
+      "stageRules": [
+        {
+          "stageCode": "A1",
+          "unitStart": 1,
+          "unitEnd": 12,
+          "courseShortname": "FLW-FW-A1",
+          "courseIdnumber": "FLW_FW_A1"
+        },
+        {
+          "stageCode": "A2",
+          "unitStart": 13,
+          "unitEnd": 24,
+          "courseShortname": "FLW-FW-A2",
+          "courseIdnumber": "FLW_FW_A2"
+        },
+        {
+          "stageCode": "B1",
+          "unitStart": 25,
+          "unitEnd": 36,
+          "courseShortname": "FLW-FW-B1",
+          "courseIdnumber": "FLW_FW_B1"
+        },
+        {
+          "stageCode": "B2",
+          "unitStart": 37,
+          "unitEnd": 48,
+          "courseShortname": "FLW-FW-B2",
+          "courseIdnumber": "FLW_FW_B2"
+        }
+      ]
+    }
+  }
+}

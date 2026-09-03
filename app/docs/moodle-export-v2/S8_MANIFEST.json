@@ -1,0 +1,89 @@
+{
+  "gate": "S8",
+  "status": "PASS",
+  "date": "2026-08-24",
+  "visibleOperationName": "Rebuild Selected FLW Scope",
+  "internalCompatibilityMode": "clear_add",
+  "oldClearAddPath": "DISABLED_FROM_NORMAL_PRODUCTION_PATH",
+  "scopeModel": "WorldCode + DeploymentStageCode + UnitID + UnitSCORMActivityID",
+  "productionScope": {
+    "worlds": 7,
+    "units": 600,
+    "spanish": "OUT_OF_SCOPE",
+    "scopeNote": "German U061-U072 intentionally ignored by later controlling operator instruction."
+  },
+  "moodle": {
+    "url": "https://main.flw.com",
+    "config": "D:\\Dev\\MoodleWindowsInstaller-latest-501\\server\\moodle\\config.php",
+    "coreModified": false
+  },
+  "disposableFixture": {
+    "runId": "S80824151148",
+    "baseDir": "verification_exports/s8_disposable_rebuild",
+    "stageCoursesCreated": 2,
+    "unitsSeeded": 5,
+    "scormsSeeded": 5
+  },
+  "results": {
+    "previewRequired": "PASS",
+    "noHistoryRebuild": "PASS",
+    "historyBearingRebuild": "PASS",
+    "supersession": "PASS",
+    "courseIdStability": "PASS",
+    "sectionIdStability": "PASS",
+    "manualContentPreservation": "PASS",
+    "learnerAttemptPreservation": "PASS",
+    "gradeHistoryPreservation": "PASS",
+    "completionHistoryPreservation": "PASS",
+    "legacyCourseProtection": "PASS",
+    "failureRecovery": "PASS",
+    "cancelResumeIdempotence": "PASS",
+    "duplicateConflict": "PASS",
+    "wrongStageConflict": "PASS",
+    "destructiveOldFunctionRegression": "PASS",
+    "currentHistoricalMapping": "PASS",
+    "s7Regression": "PASS",
+    "s2bRegression": "PASS",
+    "editorRegression": "PASS"
+  },
+  "keyEvidence": {
+    "historyBearingUnit": {
+      "unitId": "S8T-S80824151148-U001",
+      "courseId": 204,
+      "sectionId": 2199,
+      "oldCmid": 2116,
+      "newCurrentCmid": 2123,
+      "oldTrackingRows": 15,
+      "oldGrade": 90,
+      "oldCompletionState": 1
+    },
+    "noHistoryUnit": {
+      "unitId": "S8T-S80824151148-U002",
+      "courseId": 204,
+      "sectionId": 2200,
+      "cmidPreserved": 2117,
+      "action": "UPDATE_SCORM"
+    },
+    "conflicts": {
+      "duplicateCurrent": "SCORM_DUPLICATE / BLOCKED_MAPPING_CONFLICT",
+      "wrongStage": "UNIT_STAGE_MOVE_REQUIRED / BLOCKED_STAGE_CONFLICT"
+    },
+    "legacy": {
+      "legacyCoursesDetected": 1,
+      "status": "LEGACY_UNIT_COURSE_PRESENT"
+    }
+  },
+  "testsRun": [
+    "D:\\Dev\\MoodleWindowsInstaller-latest-501\\server\\php\\php.exe -l scripts/*.php",
+    ".\\dist\\AdventureScormEditor-offline-py3119\\runtime\\python311\\python.exe -m py_compile server.py scripts/*.py",
+    "node --check static/app.js",
+    ".\\dist\\AdventureScormEditor-offline-py3119\\runtime\\python311\\python.exe scripts\\smoke_test.py",
+    "real Moodle disposable S8 rebuild tests against https://main.flw.com",
+    "representative S7 overwrite dry-run regression"
+  ],
+  "knownLimitations": [
+    "No production-only mid-creation failure injection hook was added; failure recovery is verified by code-path inspection plus real invalid-package safety testing."
+  ],
+  "goNoGoForS9": "GO",
+  "s9Started": false
+}

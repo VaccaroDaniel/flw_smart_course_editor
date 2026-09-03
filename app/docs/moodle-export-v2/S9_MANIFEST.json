@@ -1,0 +1,87 @@
+{
+  "gate": "S9",
+  "status": "CONDITIONAL",
+  "createdAt": "2026-08-24T16:24:00+09:00",
+  "repositoryRoot": "C:\\Users\\com\\Documents\\Estimation Speaking\\adventure_scorm_gui",
+  "repositoryRevision": "NO_GIT_REPOSITORY",
+  "program1Status": "FROZEN",
+  "p1ContractVersion": "1.0",
+  "schemaVersions": {
+    "stageCourseMap": 1,
+    "unitSectionMap": 1,
+    "unitScormMap": 1,
+    "p1ContentDeploymentContract": "1.0"
+  },
+  "scope": {
+    "worlds": 7,
+    "spanish": "OUT_OF_SCOPE",
+    "promptExpectedUnits": 612,
+    "verifiedCurrentScopeUnits": 600,
+    "scopeMismatch": true,
+    "scopeNote": "Current editor/source scope remains 600 because German U061-U072 are intentionally excluded from the S7B/S8 scope decision."
+  },
+  "results": {
+    "worldStageToCourse": "PASS",
+    "unitToSection": "PASS",
+    "unitScormToCmid": "PASS",
+    "componentToSco": "PASS",
+    "microActivityToParent": "PASS",
+    "historicalDeploymentLookup": "PASS",
+    "deploymentFreshness": "PASS",
+    "historyHandoff": "PASS",
+    "cupkpHandoff": "PASS",
+    "s2bNavigation": "PASS_REUSED",
+    "attemptPreservation": "PASS",
+    "singleImport": "PASS",
+    "batchImport": "PASS",
+    "rebuild": "PASS",
+    "sevenWorldDryRun": "FAIL_612_CRITERION_PASS_600_SCOPE",
+    "dangerousOldPathAudit": "PASS",
+    "manualContent": "PASS",
+    "security": "PASS",
+    "performance": "PASS",
+    "editorRegression": "PASS",
+    "moodleCoreModified": false
+  },
+  "testsPassed": [
+    "pythonCompile",
+    "nodeSyntax",
+    "phpLint",
+    "smartCourseEditorSmoke",
+    "p1ContentDeploymentContractSmoke",
+    "p1ContractSelfTest",
+    "s9ContractCheck",
+    "s9SevenWorldCatalogPlanningFor600Scope",
+    "legacyDestructivePathAudit"
+  ],
+  "testsFailed": [
+    "sevenWorld612UnitPassCriterion"
+  ],
+  "testsNotRun": [
+    "full612UnitPackageAwareDryRun",
+    "fullAllUnitRealMoodleImport",
+    "freshS9BrowserClickThrough"
+  ],
+  "blockers": [
+    "The S9 prompt expects 612 scoped units, but the current verified editor/source production scope is 600."
+  ],
+  "highIssues": [],
+  "outputs": [
+    "docs/moodle-export-v2/P1_CONTENT_DEPLOYMENT_CONTRACT_V1.md",
+    "docs/moodle-export-v2/PROGRAM2_HISTORY_HANDOFF.md",
+    "docs/moodle-export-v2/PROGRAM3_CUPKP_HANDOFF.md",
+    "docs/moodle-export-v2/S9_TEST_REPORT.md",
+    "docs/moodle-export-v2/S9_REPORT.md",
+    "docs/moodle-export-v2/SMART_COURSE_EDITOR_MOODLE_EXPORT_V8_FINAL_REPORT.md",
+    "verification_exports/s8_disposable_rebuild/s9_p1_contract_self_test.json",
+    "verification_exports/s9_final_qa/s9_contract_check_report.json",
+    "verification_exports/s9_final_qa/s9_seven_world_catalog_qa_report.json",
+    "verification_exports/s9_final_qa/s9_regression_test_report.json",
+    "verification_exports/s9_final_qa/s9_final_syntax_smoke_after_legacy_marking.json"
+  ],
+  "next_gate_allowed": false,
+  "goNoGoForProgram2LearningGradeHistory": "NO-GO",
+  "program2Started": false,
+  "program3Started": false
+}
+

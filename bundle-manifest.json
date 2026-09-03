@@ -1,0 +1,22 @@
+﻿{
+    "name":  "FLW Smart Course Editor Offline Installer",
+    "bundle":  "FLW-Smart-Course-Editor-offline-v10-py3119-20260831",
+    "builtAt":  "2026-08-31T11:47:56",
+    "pythonRoot":  "C:\\Users\\com\\AppData\\Local\\Programs\\Python\\Python311",
+    "pythonVersion":  "Python 3.11.9",
+    "navigatorVersion":  10,
+    "appRoot":  "C:\\Users\\com\\Documents\\Estimation Speaking\\adventure_scorm_gui",
+    "entrypoints":  [
+                        "Install.bat",
+                        "Run Editor.bat"
+                    ],
+    "excludedLocalState":  [
+                               ".settings.json",
+                               "certs",
+                               "logs",
+                               "batch_jobs",
+                               "unit_cache",
+                               "verification_exports",
+                               "pilot_exports"
+                           ]
+}

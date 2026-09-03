@@ -1,0 +1,80 @@
+{
+  "gate": "S4",
+  "name": "Unit Section Resolver",
+  "status": "PASS",
+  "goNoGoForS5": "GO",
+  "stopAfterGate": true,
+  "moodle": {
+    "version": "5.1.5 (Build: 20260608)",
+    "stageCourseTestIds": {
+      "FLW_REW_A2": 200,
+      "FLW_REW_B2": 201
+    }
+  },
+  "architecture": {
+    "stageCourse": "FLW World + Deployment Stage -> Moodle Course",
+    "unitSection": "FLW Unit -> Moodle Section",
+    "scormActivity": "Pending S5"
+  },
+  "identity": {
+    "unitCanonicalKey": "UnitID",
+    "example": "REW-U023",
+    "sectionTitlePattern": "U### — Unit Title"
+  },
+  "mapping": {
+    "defaultLocalMap": "flw_moodle_unit_section_map.json",
+    "verificationLocalMap": "verification_exports/s4_unit_section_tests/s4_unit_section_map.json",
+    "markerMethod": "COURSE_SECTION_SUMMARY_HTML_COMMENT",
+    "markerKey": "FLW_UNIT_KEY"
+  },
+  "implementationFiles": [
+    "scripts/import_scorm_pilot_to_moodle.php",
+    "static/index.html",
+    "static/app.js",
+    "scripts/smoke_test.py"
+  ],
+  "reports": [
+    "docs/moodle-export-v2/S4_UNIT_SECTION_ARCHITECTURE.md",
+    "docs/moodle-export-v2/S4_SECTION_IDENTITY.md",
+    "docs/moodle-export-v2/S4_SECTION_MAPPING.md",
+    "docs/moodle-export-v2/S4_SECTION_ORDERING.md",
+    "docs/moodle-export-v2/S4_CONFLICT_HANDLING.md",
+    "docs/moodle-export-v2/S4_TEST_REPORT.md",
+    "docs/moodle-export-v2/S4_REPORT.md"
+  ],
+  "verificationArtifacts": [
+    "verification_exports/s4_unit_section_tests/s4_u023_create_report.json",
+    "verification_exports/s4_unit_section_tests/s4_rew_a2_u019_u036_report.json",
+    "verification_exports/s4_unit_section_tests/s4_rew_a2_final_idempotent_report.json",
+    "verification_exports/s4_unit_section_tests/s4_reorder_repair_report_clean.json",
+    "verification_exports/s4_unit_section_tests/s4_title_drift_manual_content_report.json",
+    "verification_exports/s4_unit_section_tests/s4_duplicate_marker_report_clean.json",
+    "verification_exports/s4_unit_section_tests/s4_wrong_stage_marker_report.json",
+    "verification_exports/s4_unit_section_tests/s4_missing_target_report.json",
+    "verification_exports/s4_unit_section_tests/s4_mapping_conflict_report.json",
+    "verification_exports/s4_unit_section_tests/s4_permission_student_report.json",
+    "verification_exports/s4_unit_section_tests/s4_final_clean_state.json"
+  ],
+  "finalRealMoodleState": {
+    "FLW_REW_A2": {
+      "courseId": 200,
+      "unitSections": 18,
+      "unitRange": "REW-U019..REW-U036",
+      "scormModuleCount": 0
+    },
+    "FLW_REW_B2": {
+      "courseId": 201,
+      "temporaryS4SectionsRemoved": true,
+      "scormModuleCount": 0
+    }
+  },
+  "tests": {
+    "smoke": "PASS",
+    "pythonCompile": "PASS",
+    "javascriptSyntax": "PASS",
+    "phpSyntax": "PASS",
+    "realMoodleSectionCreateReuseUpdateReorder": "PASS",
+    "realMoodleConflictHandling": "PASS",
+    "scormActivityImportSuppressed": "PASS"
+  }
+}

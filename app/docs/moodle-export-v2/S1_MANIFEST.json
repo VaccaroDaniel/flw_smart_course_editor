@@ -1,0 +1,67 @@
+{
+  "gate": "S1",
+  "status": "PASS",
+  "created": "2026-08-23",
+  "scope": "Deployment metadata + course map only; S2 not started.",
+  "configurationAdded": [
+    "flw_moodle_course_map.json"
+  ],
+  "filesChanged": [
+    "flw_moodle_course_map.json",
+    "moodle_import_support.py",
+    "server.py",
+    "static/app.js",
+    "scripts/smoke_test.py",
+    "docs/moodle-export-v2/S1_WORLD_STAGE_MODEL.md",
+    "docs/moodle-export-v2/S1_COURSE_MAP_SCHEMA.md",
+    "docs/moodle-export-v2/S1_DEPLOYMENT_STAGE_RESOLUTION.md",
+    "docs/moodle-export-v2/S1_LANGUAGE_ROOTS.md",
+    "docs/moodle-export-v2/S1_TEST_REPORT.md",
+    "docs/moodle-export-v2/S1_REPORT.md",
+    "docs/moodle-export-v2/S1_MANIFEST.json"
+  ],
+  "worldCodes": {
+    "01-adventure": "AEW",
+    "02-real": "REW",
+    "03-russian": "RUW",
+    "04-chinese": "CHW",
+    "05-german": "GEW",
+    "06-japanese": "JPW",
+    "07-spanish": "SW",
+    "08-french": "FW"
+  },
+  "realEnglishStageRules": [
+    {"stageCode": "A1", "unitStart": 1, "unitEnd": 18, "courseExternalKey": "FLW_REW_A1"},
+    {"stageCode": "A2", "unitStart": 19, "unitEnd": 36, "courseExternalKey": "FLW_REW_A2"},
+    {"stageCode": "B1", "unitStart": 37, "unitEnd": 60, "courseExternalKey": "FLW_REW_B1"},
+    {"stageCode": "B2", "unitStart": 61, "unitEnd": 84, "courseExternalKey": "FLW_REW_B2"},
+    {"stageCode": "C1", "unitStart": 85, "unitEnd": 108, "courseExternalKey": "FLW_REW_C1"}
+  ],
+  "actualSourceRootStatus": {
+    "01-adventure": {"status": "RESOLVED", "units": 72},
+    "02-real": {"status": "RESOLVED", "units": 108},
+    "03-russian": {"status": "RESOLVED", "units": 120},
+    "04-chinese": {"status": "RESOLVED", "units": 133},
+    "05-german": {"status": "RESOLVED", "units": 60},
+    "06-japanese": {"status": "RESOLVED", "units": 60},
+    "07-spanish": {"status": "SOURCE_ROOT_NOT_FOUND", "units": 0},
+    "08-french": {"status": "RESOLVED", "units": 48}
+  },
+  "actualResolutionSummary": {
+    "AEW": {"resolved": 69, "unresolved": 3},
+    "REW": {"resolved": 108, "unresolved": 0},
+    "RUW": {"resolved": 0, "unresolved": 120},
+    "CHW": {"resolved": 0, "unresolved": 133},
+    "GEW": {"resolved": 60, "unresolved": 0},
+    "JPW": {"resolved": 60, "unresolved": 0},
+    "FW": {"resolved": 48, "unresolved": 0},
+    "SW": {"resolved": 0, "unresolved": 0, "sourceRootStatus": "SOURCE_ROOT_NOT_FOUND"}
+  },
+  "tests": {
+    "pythonCompile": "PASS",
+    "smokeTest": "PASS",
+    "nodeSyntax": "PASS",
+    "phpSyntax": "PASS"
+  },
+  "goNoGoForS2": "GO for S2 when requested; NO-GO for real all-language import until unresolved mappings and Moodle dataroot permission are fixed."
+}

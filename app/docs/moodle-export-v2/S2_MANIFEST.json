@@ -1,0 +1,47 @@
+{
+  "gate": "S2",
+  "status": "PASS",
+  "created": "2026-08-23",
+  "scope": "Stable SCORM structure/package/SCO identity only; S2B not started.",
+  "filesChanged": [
+    "server.py",
+    "scripts/smoke_test.py",
+    "docs/moodle-export-v2/S2_SCORM_STRUCTURE.md",
+    "docs/moodle-export-v2/S2_SCORM_IDENTITY.md",
+    "docs/moodle-export-v2/S2_COMPONENT_SCO_MAPPING.md",
+    "docs/moodle-export-v2/S2_MICRO_ACTIVITY_POLICY.md",
+    "docs/moodle-export-v2/S2_TEST_REPORT.md",
+    "docs/moodle-export-v2/S2_REPORT.md",
+    "docs/moodle-export-v2/S2_MANIFEST.json"
+  ],
+  "packageIdentifierRule": "FLW_<WorldCode>_U###_SCORM12",
+  "unitScormActivityKeyRule": "<UnitID>-UNITSCORM",
+  "futureCmidNumberRule": "FLW_<WorldCode>_U###_UNITSCORM",
+  "scoIdentifierRule": "FLW_<WorldCode>_U###_<ComponentKey>",
+  "scormStructureVersion": 2,
+  "manifestSchemaVersion": 2,
+  "componentsTrackedAsSco": [
+    "vocabulary",
+    "lesson",
+    "watch",
+    "project",
+    "result",
+    "other stable substantial sections"
+  ],
+  "microActivityPolicy": {
+    "trackAsSeparateSco": false,
+    "mappingField": "microActivityMappings"
+  },
+  "hashes": {
+    "packageSha256": "ZIP byte hash",
+    "packageContentSha256": "deterministic staged file path/content hash"
+  },
+  "tests": {
+    "preS2SmokeBaseline": "PASS",
+    "pythonCompile": "PASS",
+    "smokeTest": "PASS",
+    "nodeSyntax": "PASS",
+    "phpSyntax": "PASS"
+  },
+  "goNoGoForS2B": "GO for S2B when requested; NO-GO for real Moodle tracking/update claims until later real-Moodle gates."
+}

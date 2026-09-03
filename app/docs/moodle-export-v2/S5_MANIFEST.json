@@ -1,0 +1,76 @@
+{
+  "gate": "S5",
+  "status": "PASS",
+  "goNoGoForS6": "GO",
+  "generatedAt": "2026-08-24T01:22:00+09:00",
+  "scope": "Unit SCORM upsert and learner attempt/tracking preservation only. S6 was not started.",
+  "architecture": {
+    "worldStageToMoodleCourse": true,
+    "unitToMoodleSection": true,
+    "oneUnitScormActivityPerUnitSection": true,
+    "substantialComponentToSco": true,
+    "microActivitiesRemainInParentSco": true,
+    "nativeScormTocHiddenOrMinimized": true
+  },
+  "identity": {
+    "exampleUnitId": "REW-U023",
+    "exampleUnitScormActivityId": "REW-U023-UNITSCORM",
+    "exampleStableCmidNumber": "FLW_REW_U023_UNITSCORM",
+    "exampleManifestIdentifier": "FLW_REW_U023_SCORM12"
+  },
+  "codeFilesChanged": [
+    "scripts/import_scorm_pilot_to_moodle.php",
+    "server.py",
+    "static/app.js",
+    "static/index.html",
+    "scripts/s5_generate_fixtures.py",
+    "scripts/s5_moodle_tracking_probe.php",
+    "scripts/s5_moodle_manual_content_probe.php"
+  ],
+  "docsCreated": [
+    "docs/moodle-export-v2/S5_SCORM_UPSERT_ARCHITECTURE.md",
+    "docs/moodle-export-v2/S5_MOODLE_SCORM_UPDATE_BEHAVIOR.md",
+    "docs/moodle-export-v2/S5_ATTEMPT_TRACKING_PRESERVATION.md",
+    "docs/moodle-export-v2/S5_SUPERSESSION_POLICY.md",
+    "docs/moodle-export-v2/S5_GRADE_COMPLETION_BEHAVIOR.md",
+    "docs/moodle-export-v2/S5_MAPPING_CONTRACT.md",
+    "docs/moodle-export-v2/S5_TEST_REPORT.md",
+    "docs/moodle-export-v2/S5_REPORT.md"
+  ],
+  "verificationArtifacts": {
+    "directory": "verification_exports/s5_unit_scorm_tests",
+    "fixtureSummary": "verification_exports/s5_unit_scorm_tests/s5_fixture_summary.json",
+    "unitScormMap": "verification_exports/s5_unit_scorm_tests/s5_unit_scorm_map.json",
+    "createReport": "verification_exports/s5_unit_scorm_tests/s5_create_report.json",
+    "idempotentReport": "verification_exports/s5_unit_scorm_tests/s5_idempotent_report.json",
+    "updateTitleReport": "verification_exports/s5_unit_scorm_tests/s5_update_title_report.json",
+    "updateReorderReport": "verification_exports/s5_unit_scorm_tests/s5_update_reorder_report.json",
+    "updateAddScoReport": "verification_exports/s5_unit_scorm_tests/s5_update_add_sco_report.json",
+    "unsafeSupersedeReport": "verification_exports/s5_unit_scorm_tests/s5_supersede_remove_tracked_report.json",
+    "forceSupersedeReport": "verification_exports/s5_unit_scorm_tests/s5_force_supersede_report.json",
+    "manualContentFinalSnapshot": "verification_exports/s5_unit_scorm_tests/s5_manual_content_after_force_supersede.json",
+    "currentTrackingFinalSnapshot": "verification_exports/s5_unit_scorm_tests/s5_tracking_current_after_force_supersede_snapshot.json"
+  },
+  "finalMoodleState": {
+    "moodleUrl": "https://main.flw.com",
+    "courseId": 200,
+    "unitSectionId": 2175,
+    "historicalScormCmids": [2094, 2095],
+    "teacherPageCmid": 2096,
+    "currentScormCmid": 2097,
+    "currentScormId": 73
+  },
+  "tests": {
+    "realCreate": "PASS",
+    "idempotency": "PASS",
+    "trackingSeed": "PASS",
+    "safeUpdates": "PASS",
+    "unsafeSupersession": "PASS",
+    "forcedSupersession": "PASS",
+    "teacherContentPreserved": "PASS",
+    "smokeTest": "PASS",
+    "pythonCompileTargeted": "PASS",
+    "phpLintScripts": "PASS",
+    "nodeSyntax": "PASS"
+  }
+}

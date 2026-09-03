@@ -1,0 +1,106 @@
+{
+  "gate": "S2B",
+  "status": "PASS",
+  "created": "2026-08-23",
+  "updated": "2026-08-23",
+  "scope": "Unified FLW in-unit navigator, stable component resume contract, Moodle SCORM player launch integration; S3 not started.",
+  "moodle": {
+    "release": "5.1.5 (Build: 20260608)",
+    "branch": "501",
+    "scormPluginVersion": 2025100601,
+    "trustedUrl": "https://main.flw.com",
+    "certificateWarning": false,
+    "certificateBypassUsed": false,
+    "bootstrap": "PASS",
+    "packageImport": "PASS_WITH_FILEPOOL_PREWARM",
+    "browserPlayer": "PASS"
+  },
+  "finalVerificationRun": {
+    "testPackage": "C:\\Users\\com\\Documents\\Estimation Speaking\\adventure_scorm_gui\\verification_exports\\s2b_closure_fixed\\REW-U023-S2B-Browser-Verification-Unit-SCORM12-20260823_233429.zip",
+    "packageSha256": "97b5ed63ac77aeb23e1a1ad1903a73ff64bf337b7174273ada69b1a134427772",
+    "packageContentSha256": "b5b74572112d13a59fc9b576b414628eb0e6ebab4b7fb517b851c48a8545b827",
+    "temporaryCourseId": 196,
+    "temporaryUserId": 20,
+    "cmid": 2087,
+    "scormId": 67,
+    "attemptId": 57,
+    "expectedScoCount": 10,
+    "parsedScoCount": 10,
+    "trackStorage": "scorm_scoes_value"
+  },
+  "focusedFixtures": {
+    "lockedNavigation": {
+      "status": "PASS",
+      "temporaryCourseId": 197,
+      "temporaryUserId": 21,
+      "cmid": 2089,
+      "scormId": 68,
+      "lockedComponentId": "REW-U023-L05",
+      "lockedScoid": 707,
+      "stayedOnComponentId": "REW-U023-L04",
+      "stayedOnScoid": 706,
+      "lockedScoTracksCreated": false
+    },
+    "reorderedResume": {
+      "status": "PASS",
+      "temporaryCourseId": 199,
+      "temporaryUserId": 23,
+      "cmid": 2093,
+      "scormId": 70,
+      "testPackage": "C:\\Users\\com\\Documents\\Estimation Speaking\\adventure_scorm_gui\\verification_exports\\s2b_closure_fixed\\REW-U023-S2B-Browser-Verification-Unit-Reordered-SCORM12-20260823_234244.zip",
+      "lessonOrder": [
+        "REW-U023-L01",
+        "REW-U023-L03",
+        "REW-U023-L02",
+        "REW-U023-L04",
+        "REW-U023-L05",
+        "REW-U023-L06",
+        "REW-U023-L07"
+      ],
+      "resumeComponentId": "REW-U023-L02",
+      "resumeScoid": 727
+    }
+  },
+  "browserChecks": {
+    "moodleOpensWithoutCertificateWarning": "PASS",
+    "normalScormPlayerLaunch": "PASS",
+    "flwNextLesson1ToLesson2": "PASS",
+    "flwPreviousLesson3ToLesson2": "PASS",
+    "flwLessonListLesson2ToWatch": "PASS",
+    "perScoTrackingAssociation": "PASS",
+    "resumeLastStableComponentId": "PASS",
+    "reorderPreservesResume": "PASS",
+    "lockedComponentsBlocked": "PASS",
+    "nativeScormTocHiddenOrMinimized": "PASS",
+    "technicalScoTerminologyHidden": "PASS"
+  },
+  "scormStructurePreserved": {
+    "unitPackage": "1 FLW Unit = 1 SCORM 1.2 package",
+    "componentSco": "substantial lesson/component = 1 SCO",
+    "microActivities": "remain inside parent SCO"
+  },
+  "navigator": {
+    "version": 1,
+    "primaryInUnitNavigator": true,
+    "learnerFacingTechnicalScoTerms": false
+  },
+  "nativeScormSettings": {
+    "skipview": "SCORM_SKIPVIEW_ALWAYS",
+    "hidebrowse": 1,
+    "hidetoc": "SCORM_TOC_DISABLED",
+    "nav": "SCORM_NAV_DISABLED",
+    "displaycoursestructure": 0,
+    "displayattemptstatus": "SCORM_DISPLAY_ATTEMPTSTATUS_NO"
+  },
+  "tests": {
+    "pythonCompile": "PASS",
+    "nodeSyntax": "PASS",
+    "phpSyntax": "PASS",
+    "smokeTest": "PASS",
+    "navigatorRuntimeSyntax": "PASS",
+    "realMoodleImportTracking": "PASS_WITH_FILEPOOL_PREWARM",
+    "realMoodleBrowserPlayer": "PASS"
+  },
+  "goNoGoForS3": "GO",
+  "s3Started": false
+}

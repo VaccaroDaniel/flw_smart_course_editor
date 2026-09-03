@@ -1,0 +1,89 @@
+{
+  "gate": "S6",
+  "status": "PASS",
+  "goNoGoForS7": "GO",
+  "generatedAt": "2026-08-24T02:20:00+09:00",
+  "scope": "Single import modes and single-unit Moodle export UI only. S7 not started.",
+  "architecture": {
+    "worldStageToMoodleCourse": true,
+    "unitToMoodleSection": true,
+    "oneUnitScormActivityPerUnitSection": true,
+    "singleOverwriteClearsStageCourse": false,
+    "batchProductionRedesignStarted": false,
+    "moodleCoreModified": false
+  },
+  "implemented": [
+    "Single preview/dry-run button",
+    "Deploy flow previews before real mutation",
+    "Preview-state hash sent to backend",
+    "PREVIEW_STALE protection",
+    "Single Add New Unit collision returns UNIT_ALREADY_EXISTS",
+    "Single import scoped concurrency lock",
+    "Content-hash based UNCHANGED detection for repeat exports",
+    "Single import structured destination summary",
+    "Destructive legacy clear/reset path guard"
+  ],
+  "realMoodleState": {
+    "REW_A2": {
+      "courseExternalKey": "FLW_REW_A2",
+      "courseId": 200,
+      "unitId": "REW-U023",
+      "sectionId": 2175,
+      "currentScormCmid": 2097,
+      "teacherPageCmid": 2096
+    },
+    "REW_A1": {
+      "courseExternalKey": "FLW_REW_A1",
+      "courseId": 203,
+      "unitId": "REW-U001",
+      "currentScormCmid": 2098
+    }
+  },
+  "verificationArtifacts": {
+    "directory": "verification_exports/s6_single_import_tests",
+    "overwriteUpdateReport": "verification_exports/s6_single_import_tests/REW-U023-Real-English-World-Unit-23-Healthy-Choices-SCORM12-20260824_021313.flw_import_report.json",
+    "contentHashBackfillReport": "verification_exports/s6_single_import_tests/s6_backfill_content_hash_report.json",
+    "overwriteUnchangedReport": "verification_exports/s6_single_import_tests/REW-U023-Real-English-World-Unit-23-Healthy-Choices-SCORM12-20260824_021435.flw_import_report.json",
+    "addNewCollisionReport": "verification_exports/s6_single_import_tests/REW-U023-Real-English-World-Unit-23-Healthy-Choices-SCORM12-20260824_021454.flw_import_report.json",
+    "addNewUniqueCreateReport": "verification_exports/s6_single_import_tests/REW-U001-Real-English-World-Unit-1-Hello-and-Name-SCORM12-20260824_021527.flw_import_report.json",
+    "stalePreviewReport": "verification_exports/s6_single_import_tests/REW-U023-Real-English-World-Unit-23-Healthy-Choices-SCORM12-20260824_021544.flw_import_report.json",
+    "permissionReport": "verification_exports/s6_single_import_tests/s6_permission_guest_report.json",
+    "manualContentSnapshot": "verification_exports/s6_single_import_tests/s6_manual_content_snapshot.json"
+  },
+  "tests": {
+    "pythonCompile": "PASS",
+    "nodeSyntax": "PASS",
+    "phpSyntax": "PASS",
+    "smokeTest": "PASS",
+    "singleOverwriteUpdate": "PASS",
+    "singleOverwriteUnchanged": "PASS",
+    "addNewUnique": "PASS",
+    "addNewCollision": "PASS",
+    "previewActualHash": "PASS",
+    "previewStale": "PASS",
+    "manualTeacherContent": "PASS",
+    "destructivePathUnreachable": "PASS",
+    "concurrency": "PASS",
+    "permission": "PASS",
+    "s2bRegression": "PASS_WITH_PRIOR_BROWSER_EVIDENCE_AND_CURRENT_NAV_RUNTIME_SMOKE"
+  },
+  "filesChanged": [
+    "server.py",
+    "static/index.html",
+    "static/app.js",
+    "scripts/import_scorm_pilot_to_moodle.php",
+    "scripts/smoke_test.py",
+    "flw_moodle_stage_course_map.json",
+    "flw_moodle_unit_section_map.json",
+    "flw_moodle_unit_scorm_map.json",
+    "docs/moodle-export-v2/S6_SINGLE_IMPORT_ARCHITECTURE.md",
+    "docs/moodle-export-v2/S6_IMPORT_MODE_SEMANTICS.md",
+    "docs/moodle-export-v2/S6_SINGLE_IMPORT_UI.md",
+    "docs/moodle-export-v2/S6_DRY_RUN_PREVIEW.md",
+    "docs/moodle-export-v2/S6_ERROR_STATUS_CONTRACT.md",
+    "docs/moodle-export-v2/S6_TEST_REPORT.md",
+    "docs/moodle-export-v2/S6_REPORT.md",
+    "docs/moodle-export-v2/S6_MANIFEST.json"
+  ],
+  "s7Started": false
+}

@@ -1,0 +1,104 @@
+{
+  "gate": "S3",
+  "status": "PASS",
+  "created": "2026-08-24",
+  "scope": "Moodle Stage Course resolver only; S4 not started.",
+  "moodle": {
+    "release": "5.1.5 (Build: 20260608)",
+    "branch": "501",
+    "wwwroot": "https://main.flw.com"
+  },
+  "architecture": {
+    "implemented": "FLW World + Deployment Stage -> Moodle Course",
+    "unitSectionCreated": false,
+    "unitScormImported": false
+  },
+  "stageCourseKeyFormat": "FLW_<WorldCode>_<DeploymentStageCode>",
+  "courseIdnumberFormat": "course.idnumber = courseExternalKey",
+  "resolutionOrder": [
+    "FLW Program-1 framework mapping with courseid",
+    "Exact Moodle course.idnumber",
+    "Legacy Unit Course candidate reporting",
+    "Create Stage Course when authorized and conflict-free"
+  ],
+  "coursesCreated": [
+    {
+      "worldCode": "REW",
+      "deploymentStageCode": "A2",
+      "courseExternalKey": "FLW_REW_A2",
+      "moodleCourseId": 200,
+      "shortname": "FLW-REW-A2",
+      "fullname": "Real English World — A2",
+      "category": 143,
+      "unitSectionsCreated": 0,
+      "modulesCreated": 0
+    },
+    {
+      "worldCode": "REW",
+      "deploymentStageCode": "B2",
+      "courseExternalKey": "FLW_REW_B2",
+      "moodleCourseId": 201,
+      "shortname": "FLW-REW-B2",
+      "fullname": "Real English World — B2",
+      "category": 143,
+      "unitSectionsCreated": 0,
+      "modulesCreated": 0
+    }
+  ],
+  "coursesReused": [
+    {
+      "worldCode": "REW",
+      "deploymentStageCode": "A2",
+      "courseExternalKey": "FLW_REW_A2",
+      "moodleCourseId": 200,
+      "unitIds": ["REW-U019", "REW-U020", "REW-U023", "REW-U036"]
+    }
+  ],
+  "requiredTests": {
+    "A_Create_REW_A2": "PASS",
+    "B_Reuse_REW_A2": "PASS",
+    "C_Multiple_A2_Units": "PASS",
+    "D_Different_Stage": "PASS",
+    "E_Repeat_Idempotency": "PASS",
+    "F_Idnumber_Conflict": "PASS",
+    "G_Category_Missing": "PASS",
+    "H_Stage_Unresolved": "PASS",
+    "I_Legacy_Unit_Course": "PASS",
+    "J_Permissions": "PASS",
+    "K_Editor_Regression": "PASS",
+    "L_S2_S2B_Regression": "PASS"
+  },
+  "statusValues": [
+    "REUSE_STAGE_COURSE",
+    "CREATE_STAGE_COURSE",
+    "COURSE_IDNUMBER_CONFLICT",
+    "CATEGORY_MISSING",
+    "STAGE_UNRESOLVED",
+    "STAGE_CONFLICT",
+    "LEGACY_UNIT_COURSE_FOUND",
+    "PERMISSION_DENIED",
+    "COURSE_CREATE_FAILED"
+  ],
+  "filesChanged": [
+    "scripts/import_scorm_pilot_to_moodle.php",
+    "scripts/smoke_test.py",
+    "static/app.js",
+    "static/index.html",
+    "docs/moodle-export-v2/S3_STAGE_COURSE_ARCHITECTURE.md",
+    "docs/moodle-export-v2/S3_COURSE_RESOLUTION.md",
+    "docs/moodle-export-v2/S3_COURSE_CREATION.md",
+    "docs/moodle-export-v2/S3_LEGACY_COURSE_DETECTION.md",
+    "docs/moodle-export-v2/S3_TEST_REPORT.md",
+    "docs/moodle-export-v2/S3_REPORT.md",
+    "docs/moodle-export-v2/S3_MANIFEST.json"
+  ],
+  "tests": {
+    "phpSyntax": "PASS",
+    "pythonCompile": "PASS",
+    "nodeSyntax": "PASS",
+    "smokeTest": "PASS",
+    "realMoodleStageCourseResolver": "PASS"
+  },
+  "goNoGoForS4": "GO",
+  "s4Started": false
+}
